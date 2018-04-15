@@ -1,0 +1,15 @@
+{
+  "name": "shop",
+  "version": "0.0.1",
+  "description": "frontend shop engine",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mikhail Uvarov",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "yargs": "^11.0.0"
+  }
+}
