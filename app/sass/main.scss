@@ -2,10 +2,16 @@
 @import "header";
 @import "footer";
 @import "nav";
+@import "content";
 
 body {
     margin: 0;
     padding: 0;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
 }
 
 .container {

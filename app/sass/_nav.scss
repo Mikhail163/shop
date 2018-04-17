@@ -1,5 +1,6 @@
-$nav_height:20px;
+$nav_height:30px;
 $nav_bg_color:grey;
+$nav_color:white;
 
 nav {
     height: $nav_height;
@@ -22,6 +23,9 @@ nav {
 
     &-item {
         margin-right: 10px;
+        text-decoration: none;
+        color: $nav_color;
+        white-space: nowrap;
 
         &-lst {
             margin-right: 0px;
