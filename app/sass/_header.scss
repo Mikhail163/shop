@@ -1,0 +1,11 @@
+$header_height:40px;
+
+.hdr {
+    align-items: center;
+    display: flex;
+    height: $header_height;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}

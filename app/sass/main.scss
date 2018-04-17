@@ -1,1 +1,34 @@
+@import "var";
+@import "header";
+@import "footer";
+@import "nav";
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: $max-width;
+    margin: 0 auto;
+    padding: 0;
+    padding-left: $max-width-padding;
+    padding-right: $max-width-padding;
+    min-width: $min-width;
+}
+
+
+@media (max-width: $max-width) {
+    .container {
+        width: 100%;
+        padding-left: $max-width-padding/3;
+        padding-right: $max-width-padding/3;
+    }
+}
+
+@media (max-width: $max-width/2) {
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
