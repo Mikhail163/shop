@@ -15,6 +15,7 @@ body {
     padding-left: $max-width-padding;
     padding-right: $max-width-padding;
     min-width: $min-width;
+    box-sizing: border-box;
 }
 
 

@@ -1,4 +1,12 @@
 $header_height:40px;
+$header_bg_color: black;
+
+header {
+    height: $header_height;
+    width: 100%;
+    display: block;
+    background-color: $header_bg_color;
+}
 
 .hdr {
     align-items: center;
@@ -6,6 +14,6 @@ $header_height:40px;
     height: $header_height;
     justify-content: space-between;
     box-sizing: border-box;
-    background-color: black;
+
     color: white;
 }

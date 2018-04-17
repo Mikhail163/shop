@@ -1,9 +1,19 @@
+$nav_height:20px;
+$nav_bg_color:grey;
+
+nav {
+    height: $nav_height;
+    width: 100%;
+    background-color: $nav_bg_color;
+    display: block;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    background-color: grey;
-
+    height: $nav_height;
+    align-items: center;
 
     &-li {
         display: flex;
