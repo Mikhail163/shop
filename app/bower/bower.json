@@ -1,0 +1,16 @@
+{
+    "name": "install lib",
+    "authors": [
+    "Uvarov Mikhail"
+  ],
+    "description": "",
+    "main": "",
+    "license": "MIT",
+    "homepage": "",
+    "private": true,
+    "dependencies": {
+        "jasmine-core": "^3.1.0",
+        "mocha": "^3.4.2",
+        "chai": "^4.0.2"
+    }
+}

@@ -5,6 +5,7 @@ var cssPrefix = require('gulp-autoprefixer'); // корректируем css
 var uglifyjs = require('gulp-uglify-es').default;
 var BS = require('browser-sync');
 var reload = BS.reload;
+var bower = require('gulp-bower');
 
 
 // Определяем, какую сборку собираем
@@ -17,7 +18,7 @@ var config = {
 }
 
 
-gulp.task('default', ['html', 'sass', 'js', 'json', 'mywatch', 'server'], function () {
+gulp.task('default', ['bower', 'html', 'sass', 'js', 'json', 'test', 'mywatch', 'server'], function () {
     console.log('task default');
 });
 
@@ -30,7 +31,29 @@ gulp.task('html', function () {
 
 });
 
+gulp.task('test', function () {
+    if (!isProduction) {
+
+        gulp.src([config.app + '/html/test/*.html'])
+            .pipe(gulp.dest(config.dist))
+            .pipe(reload({
+                stream: true
+            }));
+
+        gulp.src([config.app + '/js/test/*.js'])
+            .pipe(uglifyjs())
+            .pipe(gulp.dest(config.dist + '/js'))
+            .pipe(reload({
+                stream: true
+            }));
+    }
+
+
+
+});
+
 gulp.task('json', function () {
+
 
     gulp.src([config.app + '/json/**/*.json'])
         .pipe(gulp.dest(config.dist + '/json'))
@@ -48,10 +71,12 @@ gulp.task('sass', function () {
         .pipe(reload({
             stream: true
         }));
+
+
 });
 
 gulp.task('js', function () {
-    gulp.src([config.app + '/js/**/*.js'])
+    gulp.src([config.app + '/js/*.js'])
         .pipe(uglifyjs())
         .pipe(gulp.dest(config.dist + '/js'))
         .pipe(reload({
@@ -60,10 +85,15 @@ gulp.task('js', function () {
 });
 
 gulp.task('mywatch', function () {
-    gulp.watch([config.app + '/html/**/*.html'], ['html']);
+    gulp.watch([config.app + '/html/*.html'], ['html']);
     gulp.watch([config.app + '/sass/**/*.scss'], ['sass']);
-    gulp.watch([config.app + '/js/**/*.js'], ['js']);
+    gulp.watch([config.app + '/js/*.js'], ['js']);
     gulp.watch([config.app + '/json/**/*.json'], ['json']);
+
+    if (!isProduction)
+        gulp.watch([config.app + '/html/test/*.html', config.app + '/js/test/*.js'], ['test']);
+
+    gulp.watch([config.app + '/bower/*.json'], ['bower']);
 });
 
 // Server
@@ -73,4 +103,13 @@ gulp.task('server', function () {
             baseDir: config.dist
         }
     })
+});
+
+gulp.task('bower', function () {
+
+
+    return bower({
+        directory: '../../' + config.dist + '/bower_components',
+        cwd: config.app + '/bower'
+    });
 });

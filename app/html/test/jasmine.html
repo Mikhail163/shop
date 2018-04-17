@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jasmine</title>
+    <link rel="stylesheet" href="bower_components/jasmine-core/lib/jasmine-core/jasmine.css">
+
+    <script src="bower_components/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+    <script src="bower_components/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="bower_components/jasmine-core/lib/jasmine-core/boot.js"></script>
+    <script>
+        describe('Соответствие значений', function () {
+            it('Проверка a == 5', function () {
+                var a = 5;
+                expect(a).toBe(5);
+                a = 7;
+                expect(a).not.toBe(5);
+            });
+
+            it('Проверка b === 10', function () {
+                var b = 10;
+                expect(b).toEqual(10);
+
+                expect(b).not.toEqual('10');
+            });
+        });
+
+        describe('Дополнительные функции', function () {
+            it('Сравнение объектов', function () {
+                var goFunc = function () {};
+
+                var user1 = {
+                    name: 'Anna',
+                    age: 27,
+                    go: goFunc
+                };
+
+                var user2 = {
+                    name: 'Anna',
+                    age: 27,
+                    go: goFunc
+                };
+
+                expect(user1).toEqual(user2);
+            });
+
+            it('Работа с регулярными выражениями', function () {
+                var str = 'Exception 0xAF test';
+
+                expect(str).toMatch(/0x[\dA-F]{2}/);
+                expect(str).not.toMatch(/^0x[\dA-F]{2}/);
+            });
+
+            it('Проверка на null', function () {
+                expect(null).toBeNull();
+                expect(false).not.toBeNull();
+            });
+
+            it('Проверка на undefined', function () {
+                expect(undefined).toBeUndefined();
+                expect(false).not.toBeUndefined();
+            });
+
+            it('Проверка на true', function () {
+                expect(true).toBeTruthy();
+                expect(false).not.toBeTruthy();
+            });
+
+            it('Проверка на false', function () {
+                expect(false).toBeFalsy();
+                expect(true).not.toBeFalsy();
+            });
+        });
+
+        describe('Массивы', function () {
+            var colors = ['black', 'orange', 'green'];
+            it('Поиск элемента orange в массиве', function () {
+                expect(colors).toContain('orange');
+            });
+
+            it('Поиск элемента white в массиве (не найден)', function () {
+                expect(colors).not.toContain('white');
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

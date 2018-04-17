@@ -12,6 +12,7 @@
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-bower": "0.0.14",
     "gulp-sass": "^4.0.1",
     "gulp-uglify-es": "^1.0.1",
     "yargs": "^11.0.0"
