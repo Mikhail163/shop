@@ -18,7 +18,7 @@ var config = {
 }
 
 
-gulp.task('default', ['bower', 'html', 'sass', 'js', 'json', 'test', 'mywatch', 'server', 'images'], function () {
+gulp.task('default', ['bower', 'html', 'sass', 'js', 'json', 'test', 'mywatch', 'server', 'images', 'favicon'], function () {
     console.log('task default');
 });
 
@@ -35,6 +35,17 @@ gulp.task('images', function () {
 
     gulp.src([config.app + '/i/*+(.jpg|png|gif|svg)'])
         .pipe(gulp.dest(config.dist + '/i'))
+        .pipe(reload({
+            stream: true
+        }));
+
+
+});
+
+gulp.task('favicon', function () {
+
+    gulp.src([config.app + '/favicon.ico'])
+        .pipe(gulp.dest(config.dist))
         .pipe(reload({
             stream: true
         }));
@@ -117,9 +128,9 @@ gulp.task('server', function () {
 
 gulp.task('bower', function () {
 
-
-    return bower({
-        directory: '../../' + config.dist + '/bower_components',
-        cwd: config.app + '/bower'
-    });
+    if (!isProduction)
+        return bower({
+            directory: '../../' + config.dist + '/bower_components',
+            cwd: config.app + '/bower'
+        });
 });
