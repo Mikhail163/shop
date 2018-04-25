@@ -4,10 +4,13 @@
 @import "nav";
 @import "content";
 @import "logo";
+@import "cart";
 
 body {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
+    color: #222222;
 }
 
 .body {
