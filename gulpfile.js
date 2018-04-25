@@ -18,7 +18,7 @@ var config = {
 }
 
 
-gulp.task('default', ['bower', 'html', 'sass', 'js', 'json', 'test', 'mywatch', 'server'], function () {
+gulp.task('default', ['bower', 'html', 'sass', 'js', 'json', 'test', 'mywatch', 'server', 'images'], function () {
     console.log('task default');
 });
 
@@ -30,6 +30,16 @@ gulp.task('html', function () {
         }));
 
 });
+
+gulp.task('images', function () {
+
+    gulp.src([config.app + '/i/*+(.jpg|png|gif|svg)'])
+        .pipe(gulp.dest(config.dist + '/i'))
+        .pipe(reload({
+            stream: true
+        }));
+});
+
 
 gulp.task('test', function () {
     if (!isProduction) {

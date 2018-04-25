@@ -1,5 +1,6 @@
-$header_height:50px;
-$header_bg_color: black;
+$header_height: $logo-height;
+$header_bg_color: white;
+$header_color: black;
 
 header {
     height: $header_height;
@@ -15,5 +16,5 @@ header {
     justify-content: space-between;
     box-sizing: border-box;
 
-    color: white;
+    color: $header_color;
 }

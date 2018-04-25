@@ -1,0 +1,12 @@
+.logo {
+    width: 200px;
+    height: $logo-height;
+    background-image: url(/i/logo200.jpg);
+    cursor: pointer;
+}
+
+@media (max-width: $max-width/2) {
+    .logo {
+        width: 58px;
+    }
+}
