@@ -1,0 +1,132 @@
+.f {
+    z-index: 1;
+    &-grey_line {
+        width: 100%;
+        height: 79px;
+        background-color: #e8e8e8;
+        position: absolute;
+        bottom: 0px;
+        z-index: 0;
+    }
+    margin-top: 109px;
+    height: 428px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-upside {
+        display: flex;
+        height: 349px;
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 490px;
+            margin: 0;
+            padding: 0;
+
+            font-size: 14px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: 0.4px;
+            color: #898989;
+            line-height: 24px;
+            padding-right: 45px;
+
+            .descrition {
+                margin-top: 29px;
+
+                p {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+
+        .f-menu {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 230px;
+            margin: 0;
+            padding: 0;
+
+            .title {
+                margin-top: 5px;
+                height: 14px;
+                font-size: 18px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                letter-spacing: 0.5px;
+                color: $red_color;
+                margin-bottom: 45px;
+            }
+
+            a {
+                height: 16px;
+                font-size: 16px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                letter-spacing: 0.4px;
+                color: #898989;
+                margin-bottom: 25px;
+
+                &:hover {
+                    color: $red_color;
+                }
+            }
+
+
+        }
+    }
+
+
+    .downside {
+        height: 79px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+        .info {
+            width: 50%;
+            font-size: 16px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: 0.4px;
+            color: #7a7a7a;
+
+        }
+        .socnet-list {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            .socnet {
+                width: 32px;
+                height: 32px;
+                margin-left: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: white;
+
+                img {
+                    filter: grayscale(100%);
+                }
+                &:hover,
+                &.twitter:hover {
+                    background-color: $red_color;
+                    filter: grayscale(0%);
+                }
+
+                &.twitter {
+                    background-color: lightgray;
+                }
+            }
+        }
+    }
+}
