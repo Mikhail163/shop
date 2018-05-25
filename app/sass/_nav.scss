@@ -21,6 +21,7 @@ nav {
         display: flex;
         box-sizing: border-box;
         padding: $nav_li_padding;
+        flex-wrap: wrap;
     }
 
     &-item {
@@ -28,9 +29,40 @@ nav {
         text-decoration: none;
         color: $nav_color;
         white-space: nowrap;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        outline: none;
 
         &-lst {
             margin-right: 0px;
         }
+
+        &:hover {
+            color: black; //$main_red;
+        }
+
+        &-phone {
+            width: 100%;
+            text-align: right;
+            font-size: 1.2rem;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+    &-menu {
+        width: 70%;
+
+        .nav-item {
+            margin-right: 30px;
+        }
+
+    }
+
+    &-info {
+        width: 30%;
+        justify-content: flex-end;
     }
 }

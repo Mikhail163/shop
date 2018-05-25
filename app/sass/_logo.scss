@@ -3,6 +3,7 @@
     height: $logo-height;
     background-image: url(/i/logo200.jpg);
     cursor: pointer;
+    outline: none;
 }
 
 @media (max-width: $max-width/2) {
