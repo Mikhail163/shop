@@ -15,17 +15,18 @@ nav {
     justify-content: space-between;
     box-sizing: border-box; //height: $nav_height;
     align-items: center;
-    flex-wrap: wrap;
 
     &-li {
         display: flex;
         box-sizing: border-box;
         padding: $nav_li_padding;
         flex-wrap: wrap;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     &-item {
-        margin-right: 10px;
+        /*margin-right: 10px;*/
         text-decoration: none;
         color: $nav_color;
         white-space: nowrap;
@@ -53,8 +54,7 @@ nav {
     }
 
     &-menu {
-        width: 70%;
-
+        /*width: 70%;*/
         .nav-item {
             margin-right: 30px;
         }
@@ -62,7 +62,25 @@ nav {
     }
 
     &-info {
-        width: 30%;
+        /*width: 30%;*/
         justify-content: flex-end;
+
+        .nav-item {
+            margin-left: 10px;
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .nav-item-phone {
+        width: auto;
+    }
+
+    .nav-menu {
+        width: 70%;
+    }
+
+    .nav-info {
+        width: 30%;
     }
 }

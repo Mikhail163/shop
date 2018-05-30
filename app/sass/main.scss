@@ -8,7 +8,8 @@
 @import "search";
 
 html {
-    height: 100%;
+    /*height: 100%;*/
+    /*display: flex;*/
 }
 
 body {
@@ -23,6 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative;
 
 }
 
@@ -45,9 +47,11 @@ body {
     }
 }
 
-@media (max-width: $max-width/2) {
+@media (max-width: $mobile-width) {
+    /*
     .container {
         padding-left: 0;
         padding-right: 0;
     }
+    */
 }
